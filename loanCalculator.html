@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Loan Calculator</title>
+    <style>
+        .heading {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            color : green;
+        }
+        #form1 {
+            margin:2em;
+            float:left;
+        }
+        #figure1 {
+            float:right;
+        }
+        span{
+            margin: 0.5em 0.5em 0.5em 1em;
+        }
+        input {
+            margin: 0.5em 0.5em 0.5em 1em;
+            text-align: left;
+            padding: 0.5em 0.5em 1em 2em;
+        }
+        label{
+            margin:0.5em 0.5em 0.5em 1em;
+            text-align: right;
+        }
+        .error {
+            margin: 1em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form id="form1">
+            <fieldset>
+                <legend class="heading">Enter Loan Data : </legend>
+            <label>Amount of the Loan($):  </label>
+            <input type="text" id="principle" required>
+            <span class="error" id="errorP"></span><br>
+
+            <label>Annual Interest(%):  </label>
+            <input type="text" id="interest" required>
+            <span id="errorI" class="error"></span><br>
+
+            <label>Repayment Period(years):</label>
+            <input type="text"  id="loanPeriod" required>
+            <span id="errorL" class="error"></span><br>
+
+            <label>Zipcode(to Find Lenders):</label>
+            <input type="text" id="zipCode">
+            <span id="errorZ" class="error"></span><br>
+
+            <span class="heading">Approximate Payments :
+                <button id="btnCalculate" type="button" disabled="true" onclick="Calculate()">Calculate</button></span><br><br>
+
+            <span>Monthly Payment :</span> <label id="lblMonthly"></label><br>
+            <span>Total Payment :  </span><label id="lblTotalPay"></label><br>
+            <span>Total Interest : </span><label id="lblInterest"></label><br><br>
+
+            <span class="heading">Sponsors: </span>Apply for your loan with one of these fine lenders: <br>
+            <span id="lenders" class="heading"></span>
+            </fieldset>
+        </form>
+        <figure id="figure1">
+            <canvas id="loanChart">Display something</canvas>
+        </figure>
+    </div>
+</body>
+<script type="text/javascript"></script>
+</html>
